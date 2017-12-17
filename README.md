@@ -26,4 +26,7 @@ Double quotes allow variable expansion (also history expansion and some other th
 In other words, single quotes completely protect a string from the shell while double quotes protect some things (spaces for example) but allow variables and special characters to be expanded/interpreted correctly.
 
 
+**Printf funcation**
+it is same of C and C++ prinf funcation 
+
 
