@@ -113,6 +113,7 @@ File descriptors are integer assoicated with file input and output. 0,1,2 are re
     - 1 stdoutput (standard output)
     - 2 stderr (standard error)
 
+
 **Array and associated array**
 
 - Stores a collection of data as seperate entity using indexes
@@ -149,3 +150,23 @@ File descriptors are integer assoicated with file input and output. 0,1,2 are re
          fruit_value=( [Apple]='$10' [orange]='$5' )
          echo ${fruit_value[Apple]}
 		 $10
+
+**Alias**
+
+- Alias command used to create shortcut of long command/commands for quick access
+
+- syntax for creating alias of any command or commands
+   	
+      alias new_command='command Sequence'
+      
+- creating alias for rm so that if we delete any file it will take backup in ~/backup
+
+      alias rm='cp $@ ~/backup && rm $@'
+
+- temporarily disable alias command facility run command with escape \ like
+   
+      \rm test1.txt 
+      
+-   unalias command used to remove aliases of any command or commands
+
+
