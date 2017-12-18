@@ -190,5 +190,22 @@ Example:
        tput cup 100 100
        
  
+ **Debugging Bash script**
+
+- -x option enable debug tracing for shell script 
+- +x option disable debug tracing for shell script
+- Running the script with the -x flag will print each source line with the current status. Note that you can also use sh-x script. Debug only portions of the script using the set -x and set +x. For example, in the preceding script the debug information for echo $I will only be printed, as debugging is restricted to that section using the -x and +x.
+
+example:
+ 
+        #!/bin/bash
+        #Filename: debug.sh
+        for i in {1..6};
+        do
+            set -x
+            echo $i
+            set +x
+        done
+        echo "Script executed"
 
 
