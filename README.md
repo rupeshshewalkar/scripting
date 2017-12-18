@@ -27,6 +27,7 @@ In other words, single quotes completely protect a string from the shell while d
 
 
 **Printf funcation**
+
 it is same of C and C++ prinf funcation.
 
     #!/bin/bash
