@@ -86,4 +86,23 @@ to assign. In order to read from the variable (in other words, 'expand' the vari
       - expanding array elements, as in ${array[42]}
       - using parameter expansion operations, as in ${filename%.*} (remove extension)
       - expanding positional parameters beyond 9: "$8 $9 ${10} ${11}"
+      
+**Math in shell**
+
+- We can perform math operation using let command,expr command, [] and (())
+
+example:
+        
+        let result=4+5
+        echo $result
+        9
+        
+        result=$[ 3+5 ]
+        echo $result
+        8
+       
+       result=$(( 3-1))
+       echo $result
+       2
+ 
  
