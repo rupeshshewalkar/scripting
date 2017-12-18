@@ -83,6 +83,7 @@ to assign. In order to read from the variable (in other words, 'expand' the vari
 
 - Curly braces are also unconditionally required when:
 
-      expanding array elements, as in ${array[42]}
-      using parameter expansion operations, as in ${filename%.*} (remove extension)
-      expanding positional parameters beyond 9: "$8 $9 ${10} ${11}"
+      - expanding array elements, as in ${array[42]}
+      - using parameter expansion operations, as in ${filename%.*} (remove extension)
+      - expanding positional parameters beyond 9: "$8 $9 ${10} ${11}"
+ 
