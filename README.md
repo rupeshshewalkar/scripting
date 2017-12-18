@@ -105,4 +105,39 @@ example:
        echo $result
        2
  
- 
+**File descriptors and Redirection**
+
+File descriptors are integer assoicated with file input and output. 0,1,2 are reserved as file descriptors
+
+	- 0 stdin (standard input)
+    - 1 stdoutput (standard output)
+    - 2 stderr (standard error)
+
+**Array and associated array**
+
+- Stores a collection of data as seperate entity using indexes
+- Associative arrays can take a string as their array index
+
+ 		- Declarartion of array 
+        
+        array_emp=(1 Rupesh 23901)
+        
+        - Print array element 
+         
+         echo ${array_emp[1]}
+         Rupesh
+
+		- Print entire array 
+          echo ${array_emp[*]} or echo ${array_emp[@]}
+          1 Rupesh 23901
+        
+        - Calculate length of array 
+          echo ${#array_emp[*]}
+          3
+        
+        - Know indexes of array 
+          echo ${!array_emp[*]}
+          0 1 2
+
+        - add or update element in a array 
+         array_employee[3]="Pune"
