@@ -69,3 +69,20 @@ output
       var =23 tries to run command (or alias, or function) var with argument =23
       var = 23 ditto, but arguments = and 23
       var= 23 sets var environment variable to blank string, then runs command 23
+
+- Variables are declared and assigned without $ and without {}. You have to use
+
+	  var=10
+
+to assign. In order to read from the variable (in other words, 'expand' the variable), you must use $.
+
+    $var      # use the variable
+    ${var}    # same as above
+    ${var}bar # expand var, and append "bar" too
+    $varbar   # same as ${varbar}, i.e expand a variable called varbar, if it exists.
+
+- Curly braces are also unconditionally required when:
+
+      expanding array elements, as in ${array[42]}
+      using parameter expansion operations, as in ${filename%.*} (remove extension)
+      expanding positional parameters beyond 9: "$8 $9 ${10} ${11}"
