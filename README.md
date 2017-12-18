@@ -49,10 +49,11 @@ it is same of C and C++ prinf funcation.
 
 Escaping special character we need to use -e option along with echo linux command.
 
+	echo -e "hello\t's"
+
 output 
 
-   echo -e "hello\t's"
-   hello   's
+	hello   's
 
  
 
