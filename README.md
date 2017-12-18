@@ -170,3 +170,25 @@ File descriptors are integer assoicated with file input and output. 0,1,2 are re
 -   unalias command used to remove aliases of any command or commands
 
 
+**Grabbing information of Terminal**
+
+- Collecting and manipulation terminal setting such finding out number of column,row,cursor position, password masking etc
+
+- tput and stty command helps to terminal manipulating settings.
+
+Example:
+
+		- Print the number of columns for the current terminal
+        tput cols
+        103
+       
+       - Print the number of lines for current terminal 
+        tput lines
+        33
+       
+       - Send  the  sequence to move the cursor to row 100, column 100 
+       tput cup 100 100
+       
+ 
+
+
