@@ -10,12 +10,14 @@ This is explained very nicely in the relevant section of the bash manual. Briefl
     $SHELL
     $ echo '{1..3}'
     {1..3}
+
 Compare that to the unquoted versions:
 
     $ echo $SHELL
     /bin/bash
     $ echo {1..3}
     1 2 3
+
 Double quotes allow variable expansion (also history expansion and some other things). Basically, you use them when you are dealing with something that you want to see expanded. For example:
 
     $ echo "$SHELL"
@@ -23,6 +25,7 @@ Double quotes allow variable expansion (also history expansion and some other th
     $ echo "!!"
     echo "echo "$SHELL""
     echo /bin/bash
+
 In other words, single quotes completely protect a string from the shell while double quotes protect some things (spaces for example) but allow variables and special characters to be expanded/interpreted correctly.
 
 
@@ -40,6 +43,10 @@ it is same of C and C++ prinf funcation.
       No  Name             Marks
       1   Rupesh           67.99
       2   Shewalkar        77.600
+
+
+ **echo escape sequences**
+
 
 
     
