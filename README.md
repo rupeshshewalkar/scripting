@@ -55,10 +55,3 @@ output
 
 	hello   's
 
-
-this
- 
-
-    
-
-d
