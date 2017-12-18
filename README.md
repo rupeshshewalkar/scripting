@@ -27,6 +27,19 @@ In other words, single quotes completely protect a string from the shell while d
 
 
 **Printf funcation**
-it is same of C and C++ prinf funcation 
+it is same of C and C++ prinf funcation.
 
+    #!/bin/bash
+    printf "%-3s %-16s %s\n" No Name Marks
+    printf "%-3d %-16s %2.2f\n" 1 Rupesh 67.9865
+    printf "%-3d %-16s %2.3f\n" 2 Shewalkar 77.5999999999
+
+   output
+  
+      No  Name             Marks
+      1   Rupesh           67.99
+      2   Shewalkar        77.600
+
+
+    
 
