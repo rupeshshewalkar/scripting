@@ -45,7 +45,7 @@ it is same of C and C++ prinf funcation.
       2   Shewalkar        77.600
 
 
- **echo escape sequences**
+ **Echo escape sequences**
 
 
 
