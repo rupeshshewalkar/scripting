@@ -55,3 +55,17 @@ output
 
 	hello   's
 
+**Variable and Environment Variable**
+
+- In scripting langauge,usually not required to initialize variables
+- Environment variables used by shell environment, which stores specially value
+- env command help to find out environment variables
+- Environment variable not defined by current process, it get from parent process
+- Well know Enovironment variables are HOME,UID,PATH,SHELL etc
+
+- Assign variable with equal sign has different meaning 
+
+      var=23 assigns 23 to the variable var.
+      var =23 tries to run command (or alias, or function) var with argument =23
+      var = 23 ditto, but arguments = and 23
+      var= 23 sets var environment variable to blank string, then runs command 23
