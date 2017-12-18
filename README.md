@@ -141,3 +141,11 @@ File descriptors are integer assoicated with file input and output. 0,1,2 are re
 
         - add or update element in a array 
          array_employee[3]="Pune"
+ 
+ 
+ - Associative array declaration 
+ 
+         declare -A fruit_value
+         fruit_value=( [Apple]='$10' [orange]='$5' )
+         echo ${fruit_value[Apple]}
+		 $10
