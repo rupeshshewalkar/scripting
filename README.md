@@ -208,4 +208,17 @@ example:
         done
         echo "Script executed"
 
+example2 : In this example debug information only disable when we asked to debug 
+
+    #!/bin/bash
+    function DEBUG()
+    {
+        [ "$_DEBUG" == "on" ] && $@ || :
+    }
+
+    for i in {1..10}
+    do
+        DEBUG echo $i
+    done
+
 
