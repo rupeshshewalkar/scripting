@@ -47,7 +47,14 @@ it is same of C and C++ prinf funcation.
 
  **Echo escape sequences**
 
+Escaping special character we need to use -e option along with echo linux command.
 
+output 
+
+   echo -e "hello\t's"
+   hello   's
+
+ 
 
     
 
