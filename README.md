@@ -314,13 +314,16 @@ You can put definitions for commonly used functions inside your .profile. These 
 
 Alternatively, you can group the definitions in a file, say test.sh, and then execute the file in the current shell by typing −
 
-$. test.sh
+    $. test.sh
+
 This has the effect of causing functions defined inside test.sh to be read and defined to the current shell as follows −
 
-$ number_one
-This is the first function speaking...
-This is now the second function speaking...
-$
+    $ number_one
+
+    This is the first function speaking...
+    This is now the second function speaking...
+
+
 To remove the definition of a function from the shell, use the unset command with the .f option. This command is also used to remove the definition of a variable to the shell.
 
 $unset .f function_name
