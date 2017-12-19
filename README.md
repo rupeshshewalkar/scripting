@@ -329,3 +329,56 @@ To remove the definition of a function from the shell, use the unset command wit
 
 $unset .f function_name
 
+
+**Field Seperator**
+
+- The IFS is a special shell variable.
+- You can change the value of IFS as per your requirments.
+- The Internal Field Separator (IFS) that is used for word splitting after expansion and to split lines into words with the read builtin command.
+- The default value is <space><tab><newline>
+  
+
+- Example
+
+Create a text file called /tmp/domains.txt as follows:
+
+    cyberciti.biz|202.54.1.1|/home/httpd|ftpcbzuser
+    nixcraft.com|202.54.1.2|/home/httpd|ftpnixuser
+
+Create a shell script called setupapachevhost.sh as follows:
+
+		#!/bin/bash
+        # setupapachevhost.sh - Apache webhosting automation demo script
+        file=/tmp/domains.txt
+
+        # set the Internal Field Separator to |
+        IFS='|'
+        while read -r domain ip webroot ftpusername
+        do
+                printf "*** Adding %s to httpd.conf...\n" $domain
+                printf "Setting virtual host using %s ip...\n" $ip
+                printf "DocumentRoot is set to %s\n" $webroot
+                printf "Adding ftp access for %s using %s ftp account...\n\n" $domain $ftpusername
+
+        done < "$file"
+
+Save and close the file. Run it.
+
+
+Sample outputs:
+
+	  *** Adding cyberciti.biz to httpd.conf...
+      Setting virtual host using 202.54.1.1 ip...
+      DocumentRoot is set to /home/httpd
+      Adding ftp access for cyberciti.biz using ftpcbzuser ftp account...
+
+      *** Adding nixcraft.com to httpd.conf...
+      Setting virtual host using 202.54.1.2 ip...
+      DocumentRoot is set to /home/httpd
+      Adding ftp access for nixcraft.com using ftpnixuser ftp account...
+
+
+- As you know $@ and $* holds list of all arguments passed to the script. IFS Effect On The Values of "$@" And "$*" (note double quotes) $@ expanded as "$1" "$2" "$3" ... "$n" and $* expanded as "$1y$2y$3y...$n", where y is the value of IFS variable i.e. "$*" is one long string and $IFS act as an separator or token delimiters.
+
+
+
