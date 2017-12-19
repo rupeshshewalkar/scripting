@@ -272,11 +272,11 @@ Following function returns a value 1 −
        return 10
     }
 
-# Invoke your function
-Hello Zara Ali
+    # Invoke your function
+    Hello Zara Ali
 
-# Capture value returnd by last command
-ret=$?
+    # Capture value returnd by last command
+    ret=$?
 
 echo "Return value is $ret"
 Upon execution, you will receive the following result −
@@ -302,12 +302,13 @@ Following example demonstrates nesting of two functions −
        echo "This is now the second function speaking..."
     }
 
-# Calling function one.
-number_one
+    # Calling function one.
+    number_one
+
 Upon execution, you will receive the following result −
 
-This is the first function speaking...
-This is now the second function speaking...
+    This is the first function speaking...
+    This is now the second function speaking...
 
 - Function Call from Prompt
 You can put definitions for commonly used functions inside your .profile. These definitions will be available whenever you log in and you can use them at the command prompt.
