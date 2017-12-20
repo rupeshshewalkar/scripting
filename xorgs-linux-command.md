@@ -12,7 +12,7 @@ Some features:
 
 **Example**
 
-1) Find all the .mp3 files in the music folder and pass to the ls command, -print0 is required if any filenames contain whitespace.:
+**1) Find all the .mp3 files in the music folder and pass to the ls command, -print0 is required if any filenames contain whitespace.:**
 
 	   find ./music -name "*.mp3" -print0 | xargs -0 ls
 
@@ -22,7 +22,7 @@ Find all files in the work folder, pass to grep and search for profit:
 	   find ./work -print | xargs grep "profit"
 
 
-2) Xargs with grep:
+**2) Xargs with grep:**
 
 When you use "xargs" in conjusction with find and grep , the grep will look for the specifig word in  each file in the from the stanadard input.
   
@@ -30,7 +30,7 @@ When you use "xargs" in conjusction with find and grep , the grep will look for 
 
 In the above exanmple first find all .sh  files from current directory or below and than on each .sh file look for word "ksh".
 
-3) Covert muti line output into single line
+**3) Covert muti line output into single line**
 
 best example of xargs is  converting output of one command into one line. For example you can run any command and then combine xargs to convert output into single line. here is an example xargs in unix which does that.
     
@@ -43,7 +43,7 @@ best example of xargs is  converting output of one command into one line. For ex
     um@system#ls -1 *.sh | xargs
     linux_sysinfo.sh aix_sysinfo.sh audit_script.sh chperm_messages.sh
 
-4) To Delete temporary files using xargs & find:
+**4) To Delete temporary files using xargs & find:**
 
 Another common example of xargs command in unix is removing temporary files from system.
     
@@ -51,13 +51,13 @@ Another common example of xargs command in unix is removing temporary files from
 
 This will remove all .tmp file from /tmp or below directory. xargs in unix is very fast as compared to deleting single file at a time which can also be done by using find command alone
 
-5)  xargs -0 to handle space in file name
+**5)  xargs -0 to handle space in file name**
 
 Above example of xargs command in unix will not work as expected if any of file name contains space or new line on it. To avoid this problem we use find -print0 to produce null separated file name and xargs-0 to handle null separated items. Here is an example of xargs command in unix which can handle file name with spaces and newline:
 	
     find /tmp -name "*.tmp" -print0 | xargs -0 rm
 
-6) Counting number of lines/words/characters in each file using xargs & find:
+**6) Counting number of lines/words/characters in each file using xargs & find:******
 
 "find"in conjuction with "xargs" and "wc"  we can count number of lines/words/characters in each file under a perticaular directory.
 
@@ -70,7 +70,7 @@ Above example of xargs command in unix will not work as expected if any of file 
 
 Note: you can use '-c' & '-w' with wc to obtain number of characters and words repectively.
 
-7) xargs and cut command in Unix:
+**7) xargs and cut command in Unix:**
 
  Though most of xargs examples in unix will be along with find and grep command but xargs is not just limited to this two it can also be used with any command which generated long list of input for example we can use xargs with cut command in unix. In below example of unix xargs we will xargs example with cut command. for using cut command let's first create a .csv file with some data e.g.
 
