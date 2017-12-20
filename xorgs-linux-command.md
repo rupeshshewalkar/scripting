@@ -84,7 +84,7 @@ Now we will display name of actual fruit from first column using xargs command i
     um@server:/etc cut -d, -f1 smartphones.csv | sort | xargs
     Orange Mango Banana
 
-8)To insert file names into the middle of command lines, type:
+**8)To insert file names into the middle of command lines, type:**
 
     um@server#ls | xargs  -t  -I  {} mv {} {}.old
 
