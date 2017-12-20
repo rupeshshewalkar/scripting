@@ -93,4 +93,50 @@ This command sequence renames all files in the current directory by adding .old 
     mv chap1 chap1.old
     mv chap2 chap2.old
     mv chap3 chap3.old
+
+**9) xargs specifies how many arguments at a time to supply to the given command**
+
+the -n flag to xargs specifies how many arguments at a time to supply to the given command
+
+	echo {0..9} | xargs -n 2		
+    0 1
+    2 3
+    4 5
+    6 7
+    8 9
+
+**10)Executing commands in parallel**
+
+You might be using xargs to invoke a compute intensive command for every line of input. Wouldn’t it be nice if xargs allowed you to take advantage of the multiple cores in your machine? That’s what -P is for. It allows xargs to invoke the specified command multiple times in parallel. You might use this for example to run multiple ffmpeg encodes in parallel. However I’m just going to show you yet another contrived example.
+
+Parallel sleep
+
+    $ time echo {1..5} | xargs -n 1 -P 5 sleep
+
+    real    0m5.013s
+    user    0m0.003s
+    sys     0m0.014s
+  
+Sequential sleep
+
+    $ time echo {1..5} | xargs -n 1 sleep
+
+    real    0m15.022s
+    user    0m0.004s
+    sys     0m0.015s
     
+
+**11) Download files from urls.txt**
+
+	cat url.txt | xargs wget –c
+
+**12)  Zip all files which find by find command**
+	
+    find . -name '*.txt' | xargs zip -9 txt.zip
+ 
+ 
+ **13) nslookup with multiple host**
+ 
+       (echo google.com; echo yandex.ru; echo mail.ru) | xargs -I DOMAIN --max-procs=10 -n 1 nslookup DOMAIN | awk '/^Address: / { print $2 }; /^Name/ { print $2 }'
+       
+  
