@@ -67,3 +67,71 @@ Examples:
 In the above case, we used the tr command with -s option to indicate a squeeze operation.
 This replaces multiple occurrences of a character with a single appearance of the same character
 
+
+**8)Replace multiple occurrences of a character with a different character.**
+
+	[root@linuxnix ~]# cat infile
+    solaris linux aix
+    [root@linuxnix ~]# tr -s " " ";" < infile
+    solaris;linux;aix
+
+The above tr command squeezes multiple occurrences of white space into one semicolon character.
+
+**9)Delete all occurances of a character.**
+
+To delete occurrences of a character we use the -d option with the tr command followed by the character to be removed.
+
+    [root@linuxnix ~]# echo "linuxunix" | tr -d 'u'
+    linxnix
+
+The above command removes all occurrences of the character u from the input string.
+
+**10)Remove all digits from the input.**
+
+  	[root@linuxnix ~]# echo "james bond 007" | tr -d '0-9'
+	james bond
+    
+**11)Remove all alphabets from the input.**
+
+	[root@linuxnix ~]# echo "james bond 007" | tr -d 'a-zA-Z'
+	007
+
+
+**12) Remove all characters except the given set with tr.**
+
+We used -d option to delete characters we mentioned from the input.
+We may use the -c option with the -d option to delete all characters except those that we mention.
+
+    [root@linuxnix ~]# echo "solaris linux hp-ux" | tr -cd 'slh'
+    slslh[root@linuxnix ~]#
+
+The above tr command removed all characters including the new line leaving behind the characters s,l and h which we mentioned to be removed.
+Using the -c option is also sometimes referred to as complimenting the set.
+
+**13: Remove all non-alphanumeric and space characters.**
+
+    [root@linuxnix ~]# echo "solaris | linux 007 ; hp-ux :::: aix" | tr -cd "[:alpha:][:space:][:digit:]"
+    solaris linux 007 hpux aix
+
+This example could prove to be especially useful when dealing with a file having a lot of junk characters.
+
+**14: Translate non-alphanumeric characters into a single newline character.**
+
+    [root@linuxnix ~]# echo "james bond 007" | tr -cs 'a-zA-Z0-9' '\n'
+    james
+    bond
+    007
+
+ 
+**15: Join all lines in a file into a single line.**
+
+    [root@linuxnix ~]# cat infile
+    solaris
+    linux
+    aix
+    [root@linuxnix ~]#
+    [root@linuxnix ~]# tr -s '\n' ' ' < infile
+    solaris linux aix [root@linuxnix ~]#
+
+The above tr command squeezes the new line character into a single space character.
+This option can be useful when attempting to consolidate scattered text in a file.
