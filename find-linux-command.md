@@ -93,3 +93,23 @@ find and pax (instead of xargs and tar)
     find . -type f -name "*html" | xargs tar cvf jw-htmlfiles.tar -
     find . -type f -name "*html" | pax -w -f jw-htmlfiles.tar
          (see http://alvinalexander.com/blog/post/linux-unix/using-pax-instead-of-tar)
+         
+         
+**Using semicolon (;) vs plus (+) with exec in find**
+------------------------------------------------------
+
+This might be best illustrated with an example. Let's say that find turns up these files:
+
+    file1
+    file2
+    file3
+Using -exec with a semicolon (find . -exec ls '{}' \;), will execute
+
+    ls file1
+    ls file2
+    ls file3
+But if you use a plus sign instead (find . -exec ls '{}' \+), as many filenames as possible are passed as arguments to a single command:
+
+    ls file1 file2 file3
+The number of filenames is only limited by the system's maximum command line length. If the command exceeds this length, the command will be called multiple times.
+
