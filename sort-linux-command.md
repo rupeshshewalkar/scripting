@@ -218,3 +218,28 @@ The duplicate Linux record got removed. Keep in mind, the command "sort -u file"
 $ sort -t"," -k1,2 -k3n,3 file 
 
 
+**16. sometime lines having some extra leading blanks which you can easliy ignore in sort with -b flag**
+
+    alan@alan-ubuntu-vm:~/tmp/sort$ cat blank_letters.txt
+    b
+    D
+       c
+    A
+    C
+        B
+    d
+    a
+
+We can easily ignore those and still sort correctly (using the -b flag):
+
+    alan@alan-ubuntu-vm:~/tmp/sort$ sort -f -s -b blank_letters.txt
+    A
+    a
+    b
+        B
+       c
+    C
+    D
+    d
+
+
