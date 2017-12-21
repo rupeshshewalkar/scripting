@@ -243,3 +243,55 @@ We can easily ignore those and still sort correctly (using the -b flag):
     d
 
 
+**17. Sort Human Readable Numbers using -h option**
+
+If we want to sort on human readable numbers (e.g., 2K 1M 1G), then we can use -h or –human-numeric-sort option.
+
+Create the following test file for this example:
+
+    $ cat test
+    2K
+    2G
+    1K
+    6T
+    1T
+    1G
+    2M
+
+The following sort command sorts human readable numbers (i.e 1K = 1 Thousand, 1M = 1 Million, 1G = 1 Giga, 1T = 1 Tera) in test file and displays sorted output.
+
+    $ sort -h test
+    1K
+    2K
+    2M
+    1G
+    2G
+    1T
+    6T
+
+
+**17.Sort Months of an Year using -M option**
+
+If we want to sort in the order of months of year, then we can use -M or –month-sort option.
+
+Create the following test file for this example:
+
+    $ cat test
+    sept
+    aug
+    jan
+    oct
+    apr
+    feb
+    mar11
+
+The following sort command sorts lines in test file as per month order. Note, lines in file should contain at least 3 character name of month name at start of line (e.g. jan, feb, mar). If we will give, ja for January or au for August, then sort command would not consider it as month name.
+
+    $ sort -M test
+    jan
+    feb
+    mar11
+    apr
+    aug
+    sept
+    oct
