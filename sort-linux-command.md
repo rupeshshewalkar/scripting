@@ -321,3 +321,27 @@ Output :
 	sort: cars.txt:3: disorder: BMW
  
 Note : If there is no output then the file is considered to be already sorted 
+
+**19. Write result of sort in a file**
+
+The output of sort command can be written to a file by using -o option. 
+Here is how it's done :
+
+    $ sort -o sort.txt
+        4
+        9
+        2
+        8
+        1
+
+Now let's check the file :
+
+	$ cat sort.txt 
+      1
+      2
+      4
+      8
+      9
+
+So we see that the output was actually written to the file whose name was supplied as input to sort through -o option.
+
