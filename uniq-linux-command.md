@@ -93,4 +93,28 @@ This option requires a method name to be entered by the user. The values could b
     thanks
 
 
+**4. How to make uniq avoid comparing first few fields**
 
+Sometimes, depending on the situation, the similarity of two lines is defined by a small part of those lines. For example, consider the contents of the following file
+
+    $ cat file2
+    Rupesh Pune
+    Sudeep Pune
+    Kalyani Pune
+    Amit Mumbai
+    Abhishek Mumbai
+    Rahul Mumbai
+    Dhiraj Hyderabad
+    Pankaj Hyderabad
+    Pranav Hyderabad
+
+Now, suppose the lines are considered similar or different based on their second field, and you want to convey this to uniq, then this can be done using the -f command line option.
+
+	uniq -f [number-of-fields-to-skip] [file-name]
+
+The -f option requires you to pass a number that represents the number of fields you want the command to skip. For example, in our case, we can pass '1' as argument to -f as it's only the first field that we want uniq to skip.
+
+     $ uniq -f 1 file2
+    Rupesh Pune
+    Amit Mumbai
+    Dhiraj Hyderabad
