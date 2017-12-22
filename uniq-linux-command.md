@@ -182,5 +182,18 @@ Now, if the requirement is to limit the comparison to first 5 characters, then t
 
     $ uniq -w 5 file4
     Rupesh
- 
- 
+    
+**9. How to make uniq comparison case insensitive**
+
+By default, the comparison uniq carries out is case-sensitive in nature. However, you can make the process case-insensitive using the -i command line option.
+
+Example:
+
+    $cat f4.txt
+    I LOVE MUSIC
+    i love music
+    THANKS
+    
+    $uniq -i f4.txt
+    I LOVE MUSIC
+    THANKS
