@@ -30,4 +30,64 @@ Clearly, each line is repeated. Now let's run Uniq on this file, and see what ha
 
 So as you can see, the output the command produced contains no repeated lines. Please note that the original file - 'file1' in our case - remains unaffected. You can redirect the tool's output to another file in case you want to save and work on it
 
-2. How to display number of repetitions for each line
+**2. How to display number of repetitions for each line**
+
+If you want, you can also make uniq display in output the number of times a line is repeated. This can be done by using the -c command line option. For example, the following command:
+
+    $  uniq -c file1
+          3 Welcome to gitlab
+          3 We are learning uniq command
+          2 thanks
+
+**3. How to only print duplicate lines using uniq**
+
+To make uniq print only duplicate lines, use the -D command line option. For example, suppose file1 now contains an extra line at the bottom (note that this line is not repeated).
+
+    $ cat file1
+    Welcome to gitlab
+    Welcome to gitlab
+    Welcome to gitlab
+    We are learning uniq command
+    We are learning uniq command
+    We are learning uniq command
+    thanks
+    thanks
+    Non duplicate line
+
+Now, when I run the following command:
+
+	$ uniq -D file1
+
+The following output is produced:
+
+    $ uniq -D file1
+    Welcome to gitlab
+    Welcome to gitlab
+    Welcome to gitlab
+    We are learning uniq command
+    We are learning uniq command
+    We are learning uniq command
+    thanks
+    thanks
+
+As you can see, the -D option makes uniq display all repeated lines in output, including all their repetitions. To better segregate, you can have an empty line after each group of repeated lines, something which can be done using the --all-repeated option.
+ 
+ 	uniq --all-repeated[=METHOD] file1
+
+This option requires a method name to be entered by the user. The values could be prepend (to prepend empty line) or separate (to append an empty line). For example, here's this option in action with prepend method.
+
+    $ uniq --all-repeated=prepend file1
+
+    Welcome to gitlab
+    Welcome to gitlab
+    Welcome to gitlab
+
+    We are learning uniq command
+    We are learning uniq command
+    We are learning uniq command
+
+    thanks
+    thanks
+
+
+
