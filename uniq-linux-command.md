@@ -118,3 +118,10 @@ The -f option requires you to pass a number that represents the number of fields
     Rupesh Pune
     Amit Mumbai
     Dhiraj Hyderabad
+
+
+**5. How to make uniq display all lines, while separating repetitive groups with empty line**
+
+In case the requirement is to display all lines, while separating repetitive groups of lines with an empty line, then you can use the --group option. Like the --all-repeated option we discussed earlier, --group also requires you to tell the position of empty line (prepend, append, or both).
+Here's an example:
+
