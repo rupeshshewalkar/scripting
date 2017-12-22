@@ -1,5 +1,8 @@
 ## uniq-linux-command
 
+## Note: ’uniq’ does not detect repeated lines unless they are adjacent.  You  may  want to  sort  the  input first, or use ‘sort -u’ without ‘uniq’
+       
+       
 the uniq command reports or omits repeated lines. Here's the general syntax of this command:
 
     uniq [OPTION]... [INPUT [OUTPUT]]
