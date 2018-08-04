@@ -381,4 +381,4 @@ Sample outputs:
 - As you know $@ and $* holds list of all arguments passed to the script. IFS Effect On The Values of "$@" And "$*" (note double quotes) $@ expanded as "$1" "$2" "$3" ... "$n" and $* expanded as "$1y$2y$3y...$n", where y is the value of IFS variable i.e. "$*" is one long string and $IFS act as an separator or token delimiters.
 
 
-
+${FUNCNAME[*]}  will be useful to get function name 
